@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Interactive Weather Dashboard</title>
+        <!-- CCS -->
+        <link rel="stylesheet" href="css\style.css">
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>My Interactive Weather Dashboard</h1>
+            <p>A weather dashboard for your daily updated weather.<p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Map from Leaflet.js -->
+            <section id="map-section">
+                <div id="map"></div>
+            </section>
+
+            <!-- Weather Information -->
+            <section class="info-section">
+                <div id="weather-info">
+                    <h3>The Current Weather Information</h3>
+                    <p id="city-name"></p>
+                    <p id="date"></p>
+                    <p id="current-time"></p>
+                    <p id="temperature"></p>
+                    <img id="weather-icon" src="" alt="Weather Icon(s)">
+                    <p id="description"></p>
+                    <p id="humidity"></p>
+                    <p id="wind-speed"></p>
+                    <p id="pressure"></p>
+                </div>
+            </section>
+
+            <!-- Input name of city -->
+            <div class="grup-input">
+                <input type="text" id="input-city" placeholder="Input the name of city">
+                <button id="input-city-button" onclick="weatherFn($('#input-city').val())">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+
+            <!-- Error Message -->
+            <div id="error-message" style="display: none; color: red; font-weight: bold;"></div>
+
+            <!-- Loading -->
+            <div id="loading" style="display: none;">Loading...</div>
+        </main>
+
+        <!-- Graphics -->
+        <section id="chart-section">
+            <h2>Forecasting</h2>
+            <canvas id="weatherChart"></canvas>
+        </section>
+
+        <footer>
+        <p>© 2025 Data is prepared by <a href="https://openweathermap.org/">OpenWeatherMap</a></p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://momentjs.com/downloads/moment.min.js"></script>
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="js/apps.js"></script>
+    </body>
+
+</html>
