@@ -1,11 +1,6 @@
 // API
-//OpenWeather API (untuk data real-time)
 const API_BASE_URL = 'https://api.openweathermap.org/data/2.5';
 const API_KEY = 'f00c38e0279b7bc85480c3fe775d518c';
-
-//Meteostat API (untuk data tren cuaca)
-const API2_BASE_URL =
-const API2_KEY =
 
 // Global variabel untuk chart & map
 let weatherChartInstance = null;
@@ -33,7 +28,7 @@ async function weatherFn(cityName) {
         ]);
 
         if (!currentRes.ok || !forecastRes.ok) {
-            showError('The city is not found in our database. Please try again!');
+            showError('Kota tidak ditemukan. Coba nama kota lain.');
             return;
         }
 

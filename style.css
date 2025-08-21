@@ -1,0 +1,188 @@
+/* Reset for consistency*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, #87CEFA, #FFFFFF); /* Gradasi langit */
+    color: #333; /* Warna teks */
+    transition: background 0.5s ease-in-out;
+    line-height: 1.5;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* body will fullfill the screen */
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #124d7d;
+    color: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* main layout */
+.dashboard {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* map lebih lebar dari info cuaca */
+    grid-template-rows: auto auto;  /* baris 1 = map+info, baris 2 = search */
+    gap: 20px;
+    align-items: start;
+}
+
+/* map */
+#map {
+    grid-column: 1;
+    grid-row: 1;
+    height: 400px;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* searching form */
+.grup-input {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.grup-input input[type="text"] {
+    width: 70%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.grup-input button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #124d7d;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.grup-input button:hover {
+    background-color: #5A9FD6;
+}
+
+/* Weather Info */
+#weather-info {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #82bce0;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 20px #6b838c;
+    transition: transform 0.3s ease-in-out;
+}
+
+.kontainer-grafik {
+    text-align: center;
+    width: 48%;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.kontainer-cuaca:hover, .kontainer-grafik:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Tanggal forecasting */
+.forecast-date {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Area hasil cuaca */
+.weather-result {
+    padding: 20px;
+    text-align: center;
+}
+
+.weather-result h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.weather-result p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Footer styling */
+footer {
+    margin-top: auto; /* Tetap di bagian bawah */
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #4682B4; /* Biru laut */
+    padding: 15px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+footer a {
+    color: #ffeb3b;
+    text-decoration: none;
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kontainer-cuaca, .kontainer-grafik {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .grup-input input[type="text"] {
+        width: 60%;
+    }
+
+    .grup-input button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+}
